@@ -3,4 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <Button android:id="@+id/btnLocation" android:text="我在的位置"/>
+        <Button android:id="@+id/btnCampus" android:text="學校地圖"/>
+        <Button android:id="@+id/btnRoute" android:text="路徑查詢"/>
+        <Button android:id="@+id/btnWeather" android:text="天氣預報"/>
+    </GridLayout>
+
 </LinearLayout>
