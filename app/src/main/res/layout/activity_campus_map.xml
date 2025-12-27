@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgCampusMap"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/campus_map"
+            android:scaleType="centerCrop"
+            android:contentDescription="校園地圖"/>
+
+        <TextView
+            android:id="@+id/txtFacilityIntro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="校園設施介紹：\n本校包含教學大樓、圖書館、運動場等設施。"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+</ScrollView>
