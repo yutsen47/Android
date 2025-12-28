@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Final</string>
+    <string name="app_name">中原校園導覽</string>
+    <string name="btn_map">校園地圖</string>
+    <string name="btn_admin">查詢行政單位</string>
+    <string name="btn_route">目的地導航</string>
+    <string name="btn_schedule">課表查詢</string>
+    <string name="btn_spot">中原景點</string>
+    <string name="btn_food">附近美食</string>
 </resources>
