@@ -1,12 +1,18 @@
 package com.example.afinal
-import com.example.afinal.R
+
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.afinal.Spot
+import com.example.afinal.R
 
-class SpotActivity : AppCompatActivity() {
+
+class SpotDetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +32,10 @@ class SpotActivity : AppCompatActivity() {
         listView.adapter = adapter
 
         // 點擊事件 → 顯示 Dialog
-        listView.setOnItemClickListener { parent, view, position, id ->
-            val spot: Spot = spots[position] // 明確型別
-            val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_spot_detail, null)
+        listView.setOnItemClickListener { _, _, position, _ ->
+            val spot = spots[position]
 
+            val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_spot_detail, null)
             val imgSpot = dialogView.findViewById<ImageView>(R.id.imgSpotDialog)
             val txtName = dialogView.findViewById<TextView>(R.id.txtSpotNameDialog)
             val txtAddress = dialogView.findViewById<TextView>(R.id.txtSpotAddressDialog)
@@ -45,4 +51,3 @@ class SpotActivity : AppCompatActivity() {
         }
     }
 }
-

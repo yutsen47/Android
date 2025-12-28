@@ -16,7 +16,6 @@
         <activity android:name=".SpotActivity" />
         <activity android:name=".FoodActivity" />
 
-
         <!-- 啟動頁 -->
         <activity
             android:name=".MainActivity"
