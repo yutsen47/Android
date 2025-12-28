@@ -9,11 +9,11 @@ import java.io.InputStreamReader
 
 // 課程資料模型
 data class Course(
-    val name: String,
-    val day: String,
-    val time: String,
-    val teacher: String,
-    val room: String
+    val code: String,   // 課程代碼
+    val name: String,   // 課程名稱
+    val teacher: String,// 教師
+    val time: String,   // 時間 (例如：星期2 5-6)
+    val room: String    // 教室
 )
 
 class CourseActivity : AppCompatActivity() {
@@ -33,7 +33,7 @@ class CourseActivity : AppCompatActivity() {
         // 讀取 CSV
         loadCoursesFromCSV()
 
-        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, courseList.map { it.name })
+        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, courseList.map { "${it.code} ${it.name}" })
         listView.adapter = adapter
         currentList = courseList.toMutableList()
 
@@ -41,10 +41,10 @@ class CourseActivity : AppCompatActivity() {
         btnSearch.setOnClickListener {
             val keyword = edtKeyword.text.toString().trim()
             currentList = if (keyword.isEmpty()) courseList.toMutableList()
-            else courseList.filter { it.name.contains(keyword, ignoreCase = true) }.toMutableList()
+            else courseList.filter { it.name.contains(keyword, ignoreCase = true) || it.code.contains(keyword, ignoreCase = true) }.toMutableList()
 
             adapter.clear()
-            adapter.addAll(currentList.map { it.name })
+            adapter.addAll(currentList.map { "${it.code} ${it.name}" })
             adapter.notifyDataSetChanged()
         }
 
@@ -52,10 +52,10 @@ class CourseActivity : AppCompatActivity() {
         listView.setOnItemClickListener { _, _, position, _ ->
             val c = currentList[position]
             val details = """
+                課程代碼: ${c.code}
                 課程名稱: ${c.name}
-                星期: ${c.day}
-                時間: ${c.time}
                 教師: ${c.teacher}
+                時間: ${c.time}
                 教室: ${c.room}
             """.trimIndent()
 
@@ -76,10 +76,10 @@ class CourseActivity : AppCompatActivity() {
                 val tokens = line.split(",")
                 if (tokens.size >= 5) {
                     courseList.add(Course(
-                        name = tokens[0],
-                        day = tokens[1],
-                        time = tokens[2],
-                        teacher = tokens[3],
+                        code = tokens[0],
+                        name = tokens[1],
+                        teacher = tokens[2],
+                        time = tokens[3],
                         room = tokens[4]
                     ))
                 }
