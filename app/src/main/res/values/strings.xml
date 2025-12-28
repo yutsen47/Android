@@ -6,4 +6,14 @@
     <string name="btn_schedule">課表查詢</string>
     <string name="btn_spot">中原景點</string>
     <string name="btn_food">附近美食</string>
+    <string-array name="week_days">
+        <item>全部</item>
+        <item>星期一</item>
+        <item>星期二</item>
+        <item>星期三</item>
+        <item>星期四</item>
+        <item>星期五</item>
+        <item>星期六</item>
+        <item>星期日</item>
+    </string-array>
 </resources>

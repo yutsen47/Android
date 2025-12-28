@@ -12,7 +12,7 @@
         <activity android:name=".CampusMapActivity" />
         <activity android:name=".AdminSearchActivity" />
         <activity android:name=".RouteActivity" />
-        <activity android:name=".ScheduleActivity" />
+        <activity android:name=".CourseActivity" />
         <activity android:name=".SpotActivity" />
         <activity android:name=".FoodActivity" />
 
