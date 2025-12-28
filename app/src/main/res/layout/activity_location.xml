@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="校園設施介紹：\n本校包含教學大樓、圖書館、運動場等設施。"
+            android:text="校園設施介紹：\n 請點擊想要了解的設施"
             android:textSize="16sp" />
         <TextView
             android:id="@+id/tvOutput"
