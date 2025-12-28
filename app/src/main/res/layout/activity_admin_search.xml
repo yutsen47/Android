@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp">
 
     <AutoCompleteTextView
         android:id="@+id/autoSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="請輸入單位或關鍵字"
-        android:inputType="text"
-        tools:ignore="HardcodedText" />
+        android:hint="請輸入行政單位" />
+
 </LinearLayout>

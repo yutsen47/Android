@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg">
+
+    <!-- 校園地圖 -->
+    <Button
+        android:id="@+id/btnMap"
+        style="@style/AnimatedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_map"
+        android:background="@drawable/button_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- 目的地導航 -->
+    <Button
+        android:id="@+id/btnRoute"
+        style="@style/AnimatedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_route"
+        android:background="@drawable/button_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnMap"
+        android:layout_marginTop="16dp"/>
+
+    <!-- 中原景點 -->
+    <Button
+        android:id="@+id/btnSpot"
+        style="@style/AnimatedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_spot"
+        android:background="@drawable/button_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnRoute"
+        android:layout_marginTop="16dp"/>
+
+    <!-- 課表查詢 -->
+    <Button
+        android:id="@+id/btnSchedule"
+        style="@style/AnimatedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_schedule"
+        android:background="@drawable/button_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSpot"
+        android:layout_marginTop="16dp"/>
+
+    <!-- 附近美食 -->
+    <Button
+        android:id="@+id/btnFood"
+        style="@style/AnimatedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_food"
+        android:background="@drawable/button_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSchedule"
+        android:layout_marginTop="16dp"/>
+
+    <!-- 查詢行政單位 -->
+    <Button
+        android:id="@+id/btnAdmin"
+        style="@style/AnimatedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_admin"
+        android:background="@drawable/button_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnFood"
+        android:layout_marginTop="16dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

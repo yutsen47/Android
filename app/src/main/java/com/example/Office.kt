@@ -1,4 +1,4 @@
-package com.example.campusguide
+package com.example.afinal
 
 data class Office(
     val name: String,

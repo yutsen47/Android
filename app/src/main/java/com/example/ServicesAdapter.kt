@@ -1,4 +1,4 @@
-package com.example.campusguide
+package com.example.afinal
 
 import android.view.LayoutInflater
 import android.view.View

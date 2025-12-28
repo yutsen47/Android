@@ -1,15 +1,12 @@
-package com.example.finalproject
+package com.example.afinal
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.campusguide.DetailActivity
-import com.example.campusguide.Office
 
-
-class MainActivity : AppCompatActivity() {
+class AdminSearchActivity : AppCompatActivity() {
 
     private val offices = listOf(
         Office(
@@ -31,9 +28,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_admin_search)
 
         val autoSearch = findViewById<AutoCompleteTextView>(R.id.autoSearch)
+
         val suggestions = offices.map { it.name }
 
         val adapter = ArrayAdapter(
@@ -41,10 +39,11 @@ class MainActivity : AppCompatActivity() {
             android.R.layout.simple_dropdown_item_1line,
             suggestions
         )
-        autoSearch.setAdapter(adapter)
-        autoSearch.threshold = 1 // 打一個字就會開始提示
 
-        autoSearch.setOnItemClickListener { _, _, position, _ ->
+        autoSearch.setAdapter(adapter)
+        autoSearch.threshold = 1
+
+        autoSearch.setOnItemClickListener { _, _, _, _ ->
             val selectedName = autoSearch.text.toString()
             val selectedOffice = offices.first { it.name == selectedName }
 
