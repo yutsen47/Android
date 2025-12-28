@@ -78,19 +78,12 @@ class FoodActivity : AppCompatActivity() {
                 R.drawable.food8
             ),
             Food(
-                "泰美味",
-                listOf(MealTime.LUNCH, MealTime.DINNER), // ⭐ 午＋晚
-                "桃園市中壢區大仁三街2-1號",
-                "11:30-14:00/17:00-21:00",
-                R.drawable.food8
-            ),
-            Food(
                 "SU DAK",
                 listOf(MealTime.LUNCH, MealTime.DINNER), // ⭐ 午＋晚
                 "桃園市中壢區大仁五街22號",
                 "周一至周五11:00-14:00/17:00-21:00，周六至周日11:00-14:30/17:00-21:00",
                 R.drawable.food9
-            ),
+            )
         )
         var currentList = foodList
 
