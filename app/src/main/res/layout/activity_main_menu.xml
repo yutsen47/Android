@@ -21,11 +21,11 @@
 
     <!-- 目的地導航 -->
     <Button
-        android:id="@+id/btnRoute"
+        android:id="@+id/btn_IM"
         style="@style/AnimatedButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/btn_route"
+        android:text="@string/btn_IM"
         android:background="@drawable/button_bg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
         android:background="@drawable/button_bg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnRoute"
+        app:layout_constraintTop_toBottomOf="@id/btn_IM"
         android:layout_marginTop="16dp"/>
 
     <!-- 課表查詢 -->

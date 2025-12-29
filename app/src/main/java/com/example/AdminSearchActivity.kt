@@ -1,28 +1,56 @@
 package com.example.afinal
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 
 class AdminSearchActivity : AppCompatActivity() {
 
+    // 行政單位資料模型
+    data class Office(
+        val name: String,
+        val relatedDepartments: List<String>,
+        val services: List<String>
+    )
+
+    // 行政單位資料
     private val offices = listOf(
         Office(
             "教務處",
-            listOf("教務", "選課", "課程"),
-            listOf("選課作業", "課程異動", "學分認定")
-        ),
-        Office(
-            "教務處－註冊組",
-            listOf("註冊", "學籍"),
-            listOf("在學證明", "學籍異動", "休退學")
+            listOf("課務組", "學生組"),
+            listOf("課程規劃", "成績查詢", "學籍管理")
         ),
         Office(
             "學務處",
-            listOf("學生", "宿舍", "生活"),
-            listOf("住宿申請", "獎助學金", "學生輔導")
+            listOf("宿舍組", "輔導組", "教官組", "招生組"),
+            listOf("招生簡章", "住宿申請", "心理輔導", "活動報名系統", "行事曆")
+        ),
+        Office(
+            "總務處",
+            listOf("宿舍組", "輔導組", "會計組"),
+            listOf("通行證申請", "各單位分機表", "表單申請", "應繳學費及學分費查詢")
+        ),
+        Office(
+            "人事室",
+            listOf("教職籍組", "學籍組"),
+            listOf("人事招募計畫", "簽到相關作業系統")
+        ),
+        Office(
+            "校牧處",
+            emptyList(),
+            listOf("生命成長教育認證系統", "撒瑪利亞基金申請")
+        ),
+        Office(
+            "資訊處",
+            emptyList(),
+            listOf("維修表單", "電子郵件申請", "電腦教室預約系統", "行政教學資源", "校園網路")
+        ),
+        Office(
+            "職涯發展處",
+            emptyList(),
+            listOf("產業人才培育中心", "職涯輔導中心", "實習心得報告單")
         )
     )
 
@@ -30,30 +58,44 @@ class AdminSearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_search)
 
-        val autoSearch = findViewById<AutoCompleteTextView>(R.id.autoSearch)
+        val autoCompleteTextView =
+            findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
+        val listView =
+            findViewById<ListView>(R.id.listViewDetails)
 
-        val suggestions = offices.map { it.name }
-
-        val adapter = ArrayAdapter(
+        // AutoComplete 建議清單（行政單位名稱）
+        val officeNames = offices.map { it.name }
+        val autoAdapter = ArrayAdapter(
             this,
             android.R.layout.simple_dropdown_item_1line,
-            suggestions
+            officeNames
         )
+        autoCompleteTextView.setAdapter(autoAdapter)
 
-        autoSearch.setAdapter(adapter)
-        autoSearch.threshold = 1
+        // 點選某個行政單位後顯示詳細資訊
+        autoCompleteTextView.setOnItemClickListener { parent, _, position, _ ->
+            val selectedName = parent.getItemAtPosition(position) as String
+            val office = offices.find { it.name == selectedName }
 
-        autoSearch.setOnItemClickListener { _, _, _, _ ->
-            val selectedName = autoSearch.text.toString()
-            val selectedOffice = offices.first { it.name == selectedName }
+            office?.let {
+                val details = mutableListOf<String>()
 
-            val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra("office_name", selectedOffice.name)
-            intent.putStringArrayListExtra(
-                "services",
-                ArrayList(selectedOffice.services)
-            )
-            startActivity(intent)
+                if (it.relatedDepartments.isNotEmpty()) {
+                    details.add("📌 相關部門：${it.relatedDepartments.joinToString("、")}")
+                }
+
+                details.add("🛠 可辦理業務：")
+                it.services.forEach { service ->
+                    details.add("－ $service")
+                }
+
+                val detailAdapter = ArrayAdapter(
+                    this,
+                    android.R.layout.simple_list_item_1,
+                    details
+                )
+                listView.adapter = detailAdapter
+            }
         }
     }
 }

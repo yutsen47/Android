@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         val buttons = listOf(
             findViewById<Button>(R.id.btnMap),
             findViewById<Button>(R.id.btnAdmin),
-            findViewById<Button>(R.id.btnRoute),
+            findViewById<Button>(R.id.btn_IM),
             findViewById<Button>(R.id.btnCourse),
             findViewById<Button>(R.id.btnSpot),
             findViewById<Button>(R.id.btnFood)
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         // 點擊事件
         findViewById<Button>(R.id.btnMap).setOnClickListener { startActivity(Intent(this, CampusMapActivity::class.java)) }
         findViewById<Button>(R.id.btnAdmin).setOnClickListener { startActivity(Intent(this, AdminSearchActivity::class.java)) }
-        findViewById<Button>(R.id.btnRoute).setOnClickListener { startActivity(Intent(this, RouteActivity::class.java)) }
+        findViewById<Button>(R.id.btn_IM).setOnClickListener { startActivity(Intent(this, IMActivity::class.java)) }
         findViewById<Button>(R.id.btnCourse).setOnClickListener { startActivity(Intent(this, CourseActivity::class.java)) }
         findViewById<Button>(R.id.btnSpot).setOnClickListener { startActivity(Intent(this, SpotActivity::class.java)) }
         findViewById<Button>(R.id.btnFood).setOnClickListener { startActivity(Intent(this, FoodActivity::class.java)) }

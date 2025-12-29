@@ -1,4 +1,4 @@
 package com.example.afinal
 
-class SevicesAdapter {
+class IMActivity {
 }
