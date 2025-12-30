@@ -12,7 +12,7 @@
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="101dp"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:hint="輸入關鍵字"
@@ -22,5 +22,5 @@
     <ListView
         android:id="@+id/listViewDetails"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="585dp" />
 </LinearLayout>

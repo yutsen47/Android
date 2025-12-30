@@ -6,6 +6,7 @@
     <string name="btn_schedule">課表查詢</string>
     <string name="btn_spot">中原景點</string>
     <string name="btn_food">附近美食</string>
+    <string name="teacher_photo">教師照片</string>
     <string-array name="week_days">
         <item>全部</item>
         <item>星期一</item>

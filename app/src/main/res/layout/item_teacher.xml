@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <!-- 老師照片 -->
+    <ImageView
+    android:id="@+id/teacherPhoto"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:adjustViewBounds="true"
+    android:scaleType="fitCenter"
+    android:src="@drawable/ic_launcher_background" />
+
+    <!-- 老師名字 -->
+    <TextView
+        android:id="@+id/teacherName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="老師名字"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingTop="8dp" />
+
+    <!-- 老師頭銜 -->
+    <TextView
+        android:id="@+id/teacherTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="老師頭銜"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:paddingTop="2dp"/>
+
+    <!-- 老師專長 -->
+    <TextView
+        android:id="@+id/teacherSpecialty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="老師專長"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:paddingTop="2dp"/>
+
+</LinearLayout>

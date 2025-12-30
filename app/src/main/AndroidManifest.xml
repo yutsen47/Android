@@ -11,10 +11,14 @@
 
         <activity android:name=".CampusMapActivity" />
         <activity android:name=".AdminSearchActivity" />
-        <activity android:name=".RouteActivity" />
+        <activity android:name=".IMActivity" />
         <activity android:name=".CourseActivity" />
         <activity android:name=".SpotActivity" />
         <activity android:name=".FoodActivity" />
+        <activity android:name=".DeptIntroActivity" />
+        <activity android:name=".TCourseActivity" />
+        <activity android:name=".TeacherActivity" />
+
 
         <!-- 啟動頁 -->
         <activity
